@@ -41,7 +41,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCCzayiBv6ngizIXnvbXx6tdVwva94tXNQ',
+    apiKey: //'Give you api key',
     appId: '1:574595925159:web:8e52a6606e08c16802c782',
     messagingSenderId: '574595925159',
     projectId: 'car-control-de6a4',
@@ -50,7 +50,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD5zsvNyhU_gwLUkhZePlAmeqbBVDQM-yw',
+    apiKey: //'Give you api key',
     appId: '1:574595925159:android:cf4e2790a8f5965e02c782',
     messagingSenderId: '574595925159',
     projectId: 'car-control-de6a4',
@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAW4y0hYFTQGPfMzK_4RGUHdCIV9SrD5VM',
+    apiKey: //'Give you api key',
     appId: '1:574595925159:ios:d0d188d592faa47d02c782',
     messagingSenderId: '574595925159',
     projectId: 'car-control-de6a4',
