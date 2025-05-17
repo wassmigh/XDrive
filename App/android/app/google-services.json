@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "574595925159",
+    "firebase_url": "https://car-control-de6a4-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "car-control-de6a4",
+    "storage_bucket": "car-control-de6a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574595925159:android:cf4e2790a8f5965e02c782",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5zsvNyhU_gwLUkhZePlAmeqbBVDQM-yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

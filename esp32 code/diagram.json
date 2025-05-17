@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "author": "Gheriani Wassmi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -203, "left": 170.4, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -76.8,
+      "left": -4.76,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    { "type": "bipolar-stepper-motor", "id": "stepper1", "top": 100, "left": 150, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -41.2,
+      "left": -314,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo2", "top": -11.6, "left": 268.8, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo3",
+      "top": 265,
+      "left": -37.4,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": -220.16,
+      "left": -632.41,
+      "attrs": { "pixels": "16" }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper2",
+      "top": 99.61,
+      "left": -316.37,
+      "attrs": { "size": "17", "arrow": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -147.6,
+      "left": -63.4,
+      "attrs": { "color": "cyan" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -147.6,
+      "left": 99.8,
+      "attrs": { "color": "cyan" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -201.3,
+      "left": -274.2,
+      "attrs": { "temperature": "14.1", "humidity": "58" }
+    },
+    { "type": "wokwi-a4988", "id": "drv1", "top": 331.2, "left": -273.6, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper3",
+      "top": 330.01,
+      "left": -594.77,
+      "attrs": { "size": "17", "arrow": "blue" }
+    },
+    { "type": "wokwi-a4988", "id": "drv2", "top": 580.8, "left": -475.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "bb1:2b.j", "green", [ "h0" ] ],
+    [ "esp:GND.2", "bb1:1t.a", "black", [ "v0" ] ],
+    [ "bb1:1t.b", "led2:C", "green", [ "v-28.8", "h-201.6" ] ],
+    [ "bb1:1t.c", "led1:C", "green", [ "v-76.8", "h-28.8" ] ],
+    [ "esp:17", "led2:A", "cyan", [ "h0" ] ],
+    [ "esp:16", "led1:A", "cyan", [ "h28.8", "v-124.8", "h-57.6", "v-28.8" ] ],
+    [ "dht1:GND", "bb1:1t.d", "black", [ "v0" ] ],
+    [ "esp:14", "dht1:SDA", "green", [ "h-105.45", "v-124.8" ] ],
+    [ "dht1:VCC", "bb1:2b.i", "red", [ "v-172.8", "h624", "v115.2" ] ],
+    [ "bb1:1t.e", "bb1:2t.e", "green", [ "v0" ] ],
+    [ "servo1:GND", "bb1:2t.a", "black", [ "h57.6", "v-249.6", "h297.6" ] ],
+    [ "servo2:GND", "bb1:2t.b", "black", [ "h19.2", "v-220.8", "h-76.8" ] ],
+    [ "bb1:2t.c", "bb1:3t.a", "green", [ "v0" ] ],
+    [ "servo3:GND", "bb1:2t.d", "black", [ "v19.2", "h393.6", "v-633.6", "h-153.6" ] ],
+    [ "servo3:V+", "bb1:2b.h", "green", [ "v-19.2", "h335.9", "v-384", "h-67.2" ] ],
+    [ "bb1:2b.f", "bb1:3b.f", "green", [ "v0" ] ],
+    [ "servo2:V+", "bb1:2b.g", "green", [ "h0" ] ],
+    [ "servo1:V+", "bb1:3b.g", "green", [ "h28.8", "v-240.1", "h489.6", "v67.2" ] ],
+    [ "servo1:PWM", "esp:22", "green", [ "h105.6", "v-96.2", "h201.6", "v67.2" ] ],
+    [ "esp:23", "servo3:PWM", "green", [ "h0", "v307.2", "h-76.8" ] ],
+    [ "esp:12", "servo2:PWM", "green", [ "v0", "h-67.05", "v86.4", "h259.2", "v-105.6" ] ],
+    [ "esp:19", "drv1:DIR", "white", [ "h67.2", "v518.4", "h-441.6", "v-86.4" ] ],
+    [ "drv1:STEP", "esp:18", "purple", [ "h-86.4", "v124.8", "h528", "v-566.4" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "green", [ "h-9.6", "v-9.6" ] ],
+    [ "drv1:1B", "stepper2:B-", "green", [ "h38.55", "v-86.32" ] ],
+    [ "drv1:1A", "stepper2:B+", "green", [ "h28.95", "v-86.32", "h-9.6" ] ],
+    [ "drv1:2A", "stepper2:A+", "green", [ "h19.35", "v-67.12", "h-48" ] ],
+    [ "stepper2:A-", "drv1:2B", "green", [ "v28.8", "h48", "v38.4" ] ],
+    [ "drv1:GND.1", "esp:GND.1", "black", [ "v0.08", "h172.95", "v-307.2" ] ],
+    [ "esp:5V", "drv1:VDD", "red", [ "h-28.65", "v259.2" ] ],
+    [
+      "ring1:GND",
+      "bb1:3t.b",
+      "black",
+      [ "v67.2", "h-115.2", "v-393.6", "h249.6", "v-67.2", "h537.6" ]
+    ],
+    [ "ring1:VCC", "bb1:3b.h", "red", [ "v288", "h0", "v57.6", "h1104", "v-614.4", "h-115.2" ] ],
+    [ "ring1:DIN", "esp:27", "green", [ "v28.8", "h96", "v-86.4" ] ],
+    [ "bb1:3t.e", "bb1:4t.e", "green", [ "v0" ] ],
+    [ "drv2:1B", "stepper3:B-", "green", [ "h105.75", "v-86.32", "h-28.8" ] ],
+    [ "drv2:1A", "stepper3:B+", "green", [ "h96.15", "v-67.12", "h-182.4" ] ],
+    [ "stepper3:A+", "drv2:2A", "green", [ "v57.6", "h182.4", "v48" ] ],
+    [ "drv2:2B", "stepper3:A-", "green", [ "h76.95", "v-28.72", "h-182.4" ] ],
+    [ "drv2:SLEEP", "drv2:RESET", "green", [ "h-9.6", "v-9.6" ] ],
+    [
+      "drv2:STEP",
+      "esp:32",
+      "green",
+      [ "h-67.2", "v115.2", "h480", "v-758.4", "h28.8", "v19.2" ]
+    ],
+    [ "drv2:DIR", "esp:13", "green", [ "h-48", "v76.8", "h422.4", "v-307.2" ] ]
+  ],
+  "dependencies": {}
+}
